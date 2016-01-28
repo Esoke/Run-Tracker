@@ -96,7 +96,7 @@ static NSString * const detailSegueName = @"RunDetails";
     self.locationManager.activityType = CLActivityTypeFitness;
     
     // Movement threshold for new events.
-    self.locationManager.distanceFilter = 10; // meters
+    self.locationManager.distanceFilter = 5; // meters
     
     [self.locationManager startUpdatingLocation];
 }
