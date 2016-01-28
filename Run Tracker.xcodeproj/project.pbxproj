@@ -7,30 +7,63 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FE1DF41F1C1E38BA001BF8EC /* Run_Tracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FE1DF41D1C1E38BA001BF8EC /* Run_Tracker.xcdatamodeld */; };
+		FE1DF4281C1E39A1001BF8EC /* Location+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = FE1DF4211C1E39A1001BF8EC /* Location+CoreDataProperties.m */; };
+		FE1DF4291C1E39A1001BF8EC /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = FE1DF4231C1E39A1001BF8EC /* Location.m */; };
+		FE1DF42A1C1E39A1001BF8EC /* Run+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = FE1DF4251C1E39A1001BF8EC /* Run+CoreDataProperties.m */; };
+		FE1DF42B1C1E39A1001BF8EC /* Run.m in Sources */ = {isa = PBXBuildFile; fileRef = FE1DF4271C1E39A1001BF8EC /* Run.m */; };
+		FE1DF4331C1E3B0F001BF8EC /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE1DF42F1C1E3B0F001BF8EC /* CoreData.framework */; };
+		FE1DF4341C1E3B0F001BF8EC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE1DF4301C1E3B0F001BF8EC /* CoreGraphics.framework */; };
+		FE1DF4351C1E3B0F001BF8EC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE1DF4311C1E3B0F001BF8EC /* Foundation.framework */; };
+		FE1DF4361C1E3B0F001BF8EC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE1DF4321C1E3B0F001BF8EC /* UIKit.framework */; };
+		FE1DF43C1C1E49C6001BF8EC /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE1DF4391C1E49C6001BF8EC /* DetailViewController.m */; };
+		FE1DF4461C1E53CE001BF8EC /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE1DF4451C1E53CE001BF8EC /* HomeViewController.m */; };
+		FE1DF4491C1E545C001BF8EC /* NewRunViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE1DF4481C1E545C001BF8EC /* NewRunViewController.m */; };
+		FE1DF44C1C1E58CA001BF8EC /* MathController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE1DF44B1C1E58CA001BF8EC /* MathController.m */; };
+		FE1DF44F1C1E6AF7001BF8EC /* MulticolorPolylineSegment.m in Sources */ = {isa = PBXBuildFile; fileRef = FE1DF44E1C1E6AF7001BF8EC /* MulticolorPolylineSegment.m */; };
 		FE3293E01C1E32A200E7F5EB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FE3293DF1C1E32A200E7F5EB /* main.m */; };
 		FE3293E31C1E32A200E7F5EB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FE3293E21C1E32A200E7F5EB /* AppDelegate.m */; };
-		FE3293E61C1E32A200E7F5EB /* Run_Tracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FE3293E41C1E32A200E7F5EB /* Run_Tracker.xcdatamodeld */; };
-		FE3293E91C1E32A200E7F5EB /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE3293E81C1E32A200E7F5EB /* MasterViewController.m */; };
-		FE3293EC1C1E32A200E7F5EB /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE3293EB1C1E32A200E7F5EB /* DetailViewController.m */; };
 		FE3293EF1C1E32A200E7F5EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE3293ED1C1E32A200E7F5EB /* Main.storyboard */; };
 		FE3293F11C1E32A200E7F5EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE3293F01C1E32A200E7F5EB /* Assets.xcassets */; };
 		FE3293F41C1E32A200E7F5EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE3293F21C1E32A200E7F5EB /* LaunchScreen.storyboard */; };
+		FEFFAA171C21A1A800BB7259 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEFFAA161C21A1A800BB7259 /* MapKit.framework */; };
+		FEFFAA191C21A20700BB7259 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEFFAA181C21A20700BB7259 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FE1DF41E1C1E38BA001BF8EC /* Run_Tracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Run_Tracker.xcdatamodel; sourceTree = "<group>"; };
+		FE1DF4201C1E39A1001BF8EC /* Location+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Location+CoreDataProperties.h"; sourceTree = "<group>"; };
+		FE1DF4211C1E39A1001BF8EC /* Location+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Location+CoreDataProperties.m"; sourceTree = "<group>"; };
+		FE1DF4221C1E39A1001BF8EC /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
+		FE1DF4231C1E39A1001BF8EC /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
+		FE1DF4241C1E39A1001BF8EC /* Run+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Run+CoreDataProperties.h"; sourceTree = "<group>"; };
+		FE1DF4251C1E39A1001BF8EC /* Run+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Run+CoreDataProperties.m"; sourceTree = "<group>"; };
+		FE1DF4261C1E39A1001BF8EC /* Run.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Run.h; sourceTree = "<group>"; };
+		FE1DF4271C1E39A1001BF8EC /* Run.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Run.m; sourceTree = "<group>"; };
+		FE1DF42F1C1E3B0F001BF8EC /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		FE1DF4301C1E3B0F001BF8EC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		FE1DF4311C1E3B0F001BF8EC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		FE1DF4321C1E3B0F001BF8EC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		FE1DF4381C1E49C6001BF8EC /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		FE1DF4391C1E49C6001BF8EC /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		FE1DF4441C1E53CE001BF8EC /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		FE1DF4451C1E53CE001BF8EC /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		FE1DF4471C1E545C001BF8EC /* NewRunViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewRunViewController.h; sourceTree = "<group>"; };
+		FE1DF4481C1E545C001BF8EC /* NewRunViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewRunViewController.m; sourceTree = "<group>"; };
+		FE1DF44A1C1E58CA001BF8EC /* MathController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathController.h; sourceTree = "<group>"; };
+		FE1DF44B1C1E58CA001BF8EC /* MathController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MathController.m; sourceTree = "<group>"; };
+		FE1DF44D1C1E6AF7001BF8EC /* MulticolorPolylineSegment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MulticolorPolylineSegment.h; sourceTree = "<group>"; };
+		FE1DF44E1C1E6AF7001BF8EC /* MulticolorPolylineSegment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MulticolorPolylineSegment.m; sourceTree = "<group>"; };
 		FE3293DB1C1E32A200E7F5EB /* Run Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Run Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE3293DF1C1E32A200E7F5EB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FE3293E11C1E32A200E7F5EB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FE3293E21C1E32A200E7F5EB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		FE3293E51C1E32A200E7F5EB /* Run_Tracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Run_Tracker.xcdatamodel; sourceTree = "<group>"; };
-		FE3293E71C1E32A200E7F5EB /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
-		FE3293E81C1E32A200E7F5EB /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
-		FE3293EA1C1E32A200E7F5EB /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		FE3293EB1C1E32A200E7F5EB /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		FE3293EE1C1E32A200E7F5EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FE3293F01C1E32A200E7F5EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FE3293F31C1E32A200E7F5EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FE3293F51C1E32A200E7F5EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FEFFAA161C21A1A800BB7259 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		FEFFAA181C21A20700BB7259 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,17 +71,52 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEFFAA191C21A20700BB7259 /* CoreLocation.framework in Frameworks */,
+				FE1DF4331C1E3B0F001BF8EC /* CoreData.framework in Frameworks */,
+				FE1DF4341C1E3B0F001BF8EC /* CoreGraphics.framework in Frameworks */,
+				FEFFAA171C21A1A800BB7259 /* MapKit.framework in Frameworks */,
+				FE1DF4351C1E3B0F001BF8EC /* Foundation.framework in Frameworks */,
+				FE1DF4361C1E3B0F001BF8EC /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FE1DF42C1C1E39B2001BF8EC /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				FE1DF4201C1E39A1001BF8EC /* Location+CoreDataProperties.h */,
+				FE1DF4211C1E39A1001BF8EC /* Location+CoreDataProperties.m */,
+				FE1DF4221C1E39A1001BF8EC /* Location.h */,
+				FE1DF4231C1E39A1001BF8EC /* Location.m */,
+				FE1DF4241C1E39A1001BF8EC /* Run+CoreDataProperties.h */,
+				FE1DF4251C1E39A1001BF8EC /* Run+CoreDataProperties.m */,
+				FE1DF4261C1E39A1001BF8EC /* Run.h */,
+				FE1DF4271C1E39A1001BF8EC /* Run.m */,
+			);
+			name = CoreData;
+			sourceTree = "<group>";
+		};
+		FE1DF4371C1E3B6E001BF8EC /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				FEFFAA181C21A20700BB7259 /* CoreLocation.framework */,
+				FEFFAA161C21A1A800BB7259 /* MapKit.framework */,
+				FE1DF42F1C1E3B0F001BF8EC /* CoreData.framework */,
+				FE1DF4301C1E3B0F001BF8EC /* CoreGraphics.framework */,
+				FE1DF4311C1E3B0F001BF8EC /* Foundation.framework */,
+				FE1DF4321C1E3B0F001BF8EC /* UIKit.framework */,
+			);
+			name = Library;
+			sourceTree = "<group>";
+		};
 		FE3293D21C1E32A200E7F5EB = {
 			isa = PBXGroup;
 			children = (
 				FE3293DD1C1E32A200E7F5EB /* Run Tracker */,
 				FE3293DC1C1E32A200E7F5EB /* Products */,
+				FE1DF4371C1E3B6E001BF8EC /* Library */,
 			);
 			sourceTree = "<group>";
 		};
@@ -65,16 +133,23 @@
 			children = (
 				FE3293E11C1E32A200E7F5EB /* AppDelegate.h */,
 				FE3293E21C1E32A200E7F5EB /* AppDelegate.m */,
-				FE3293E71C1E32A200E7F5EB /* MasterViewController.h */,
-				FE3293E81C1E32A200E7F5EB /* MasterViewController.m */,
-				FE3293EA1C1E32A200E7F5EB /* DetailViewController.h */,
-				FE3293EB1C1E32A200E7F5EB /* DetailViewController.m */,
+				FE1DF4441C1E53CE001BF8EC /* HomeViewController.h */,
+				FE1DF4451C1E53CE001BF8EC /* HomeViewController.m */,
+				FE1DF4471C1E545C001BF8EC /* NewRunViewController.h */,
+				FE1DF4481C1E545C001BF8EC /* NewRunViewController.m */,
+				FE1DF4381C1E49C6001BF8EC /* DetailViewController.h */,
+				FE1DF4391C1E49C6001BF8EC /* DetailViewController.m */,
+				FE1DF44A1C1E58CA001BF8EC /* MathController.h */,
+				FE1DF44B1C1E58CA001BF8EC /* MathController.m */,
 				FE3293ED1C1E32A200E7F5EB /* Main.storyboard */,
-				FE3293F01C1E32A200E7F5EB /* Assets.xcassets */,
+				FE1DF44D1C1E6AF7001BF8EC /* MulticolorPolylineSegment.h */,
+				FE1DF44E1C1E6AF7001BF8EC /* MulticolorPolylineSegment.m */,
 				FE3293F21C1E32A200E7F5EB /* LaunchScreen.storyboard */,
 				FE3293F51C1E32A200E7F5EB /* Info.plist */,
-				FE3293E41C1E32A200E7F5EB /* Run_Tracker.xcdatamodeld */,
+				FE1DF41D1C1E38BA001BF8EC /* Run_Tracker.xcdatamodeld */,
+				FE3293F01C1E32A200E7F5EB /* Assets.xcassets */,
 				FE3293DE1C1E32A200E7F5EB /* Supporting Files */,
+				FE1DF42C1C1E39B2001BF8EC /* CoreData */,
 			);
 			path = "Run Tracker";
 			sourceTree = "<group>";
@@ -118,6 +193,15 @@
 				TargetAttributes = {
 					FE3293DA1C1E32A200E7F5EB = {
 						CreatedOnToolsVersion = 7.0.1;
+						DevelopmentTeam = ACUUQ78SSB;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -157,9 +241,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FE3293EC1C1E32A200E7F5EB /* DetailViewController.m in Sources */,
-				FE3293E91C1E32A200E7F5EB /* MasterViewController.m in Sources */,
-				FE3293E61C1E32A200E7F5EB /* Run_Tracker.xcdatamodeld in Sources */,
+				FE1DF42B1C1E39A1001BF8EC /* Run.m in Sources */,
+				FE1DF4281C1E39A1001BF8EC /* Location+CoreDataProperties.m in Sources */,
+				FE1DF4291C1E39A1001BF8EC /* Location.m in Sources */,
+				FE1DF44F1C1E6AF7001BF8EC /* MulticolorPolylineSegment.m in Sources */,
+				FE1DF43C1C1E49C6001BF8EC /* DetailViewController.m in Sources */,
+				FE1DF42A1C1E39A1001BF8EC /* Run+CoreDataProperties.m in Sources */,
+				FE1DF4461C1E53CE001BF8EC /* HomeViewController.m in Sources */,
+				FE1DF41F1C1E38BA001BF8EC /* Run_Tracker.xcdatamodeld in Sources */,
+				FE1DF4491C1E545C001BF8EC /* NewRunViewController.m in Sources */,
+				FE1DF44C1C1E58CA001BF8EC /* MathController.m in Sources */,
 				FE3293E31C1E32A200E7F5EB /* AppDelegate.m in Sources */,
 				FE3293E01C1E32A200E7F5EB /* main.m in Sources */,
 			);
@@ -271,7 +362,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Run Tracker/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Esma.Run-Tracker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -282,7 +375,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Run Tracker/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Esma.Run-Tracker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -308,16 +403,17 @@
 				FE3293FA1C1E32A300E7F5EB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		FE3293E41C1E32A200E7F5EB /* Run_Tracker.xcdatamodeld */ = {
+		FE1DF41D1C1E38BA001BF8EC /* Run_Tracker.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				FE3293E51C1E32A200E7F5EB /* Run_Tracker.xcdatamodel */,
+				FE1DF41E1C1E38BA001BF8EC /* Run_Tracker.xcdatamodel */,
 			);
-			currentVersion = FE3293E51C1E32A200E7F5EB /* Run_Tracker.xcdatamodel */;
+			currentVersion = FE1DF41E1C1E38BA001BF8EC /* Run_Tracker.xcdatamodel */;
 			path = Run_Tracker.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

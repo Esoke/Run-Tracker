@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DetailViewController : UIViewController
+@class Run;
 
-@property (strong, nonatomic) id detailItem;
-@property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
+@interface DetailViewController : UIViewController 
+
+@property (strong, nonatomic) Run *run;
 
 @end
-
