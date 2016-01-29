@@ -45,6 +45,8 @@ static NSString * const detailSegueName = @"RunDetails";
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.mapView.delegate = self;
+    [self startLocationUpdates];
+
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -96,9 +98,21 @@ static NSString * const detailSegueName = @"RunDetails";
     self.locationManager.activityType = CLActivityTypeFitness;
     
     // Movement threshold for new events.
-    self.locationManager.distanceFilter = 5; // meters
+    self.locationManager.distanceFilter = 10; // meters
     
     [self.locationManager startUpdatingLocation];
+}
+
+-(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error{
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Unable to reach location."
+                                                                   message:nil
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * action) {}];
+    
+    [alert addAction:defaultAction];
+    [self presentViewController:alert animated:YES completion:nil];
+    
 }
 
 - (void)locationManager:(CLLocationManager *)manager
@@ -182,7 +196,10 @@ static NSString * const detailSegueName = @"RunDetails";
     self.timer = [NSTimer scheduledTimerWithTimeInterval:(1.0) target:self
                                                 selector:@selector(eachSecond) userInfo:nil repeats:YES];
     [self startLocationUpdates];
-}
+    [self.mapView removeOverlays:self.mapView.overlays];
+    [self.mapView setRegion: MKCoordinateRegionMakeWithDistance(self.mapView.userLocation.coordinate, 500, 500)];
+    
+    }
 
 - (IBAction)stopPressed:(id)sender
 {
