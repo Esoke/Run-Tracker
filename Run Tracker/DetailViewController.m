@@ -32,6 +32,8 @@
     [super viewDidLoad];
     [self configureView];
     self.mapView.delegate = self;
+    [self.mapView setRegion:[self mapRegion]];
+    [self loadMap];
 }
 
 - (void)setRun:(Run *)run
