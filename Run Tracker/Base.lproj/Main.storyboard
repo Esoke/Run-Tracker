@@ -14,26 +14,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0d4-p3-E0Q">
-                                <rect key="frame" x="0.0" y="358" width="320" height="158"/>
+                                <rect key="frame" x="0.0" y="389" width="320" height="85"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.31442818" green="0.54118609780000004" blue="0.76099537039999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="EDO-cL-1j7">
-                                <rect key="frame" x="0.0" y="444" width="320" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.81352022347162545" blue="0.76614256537228576" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="Kailasa-Bold" family="Kailasa" pointSize="18"/>
-                                <state key="normal" title="Past Runs">
-                                    <color key="titleColor" red="0.28549608257397008" green="0.35263233492615043" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="YDc-DE-8TR">
-                                <rect key="frame" x="-5" y="375" width="325" height="50"/>
+                                <rect key="frame" x="-5" y="406" width="325" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.77447923003988373" blue="0.82095797713620355" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.86121720930000001" green="1" blue="0.91804936209999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Kailasa-Bold" family="Kailasa" pointSize="20"/>
                                 <state key="normal" title="New Run">
                                     <color key="titleColor" red="0.28549608259999998" green="0.35263233490000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -72,6 +63,37 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u7q-4c-ImG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="345" y="-532"/>
+        </scene>
+        <!--Past Runs Table View Controller-->
+        <scene sceneID="MdM-0d-YPI">
+            <objects>
+                <tableViewController id="lKO-ze-EJa" customClass="PastRunsTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="sdb-DY-n4x">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="sectionIndexColor" red="0.28549608259999998" green="0.35263233490000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="sectionIndexBackgroundColor" red="0.73231941109999998" green="0.8575045604" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="LCj-Y8-SlL">
+                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LCj-Y8-SlL" id="bWX-YH-jrQ">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="lKO-ze-EJa" id="odD-gG-m0t"/>
+                            <outlet property="delegate" destination="lKO-ze-EJa" id="w7Q-48-5sa"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="nco-n1-63C"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LRH-Lw-JoN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="345" y="241"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="QbH-VV-btT">
