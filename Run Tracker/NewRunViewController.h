@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <iAd/iAd.h>
 
-@interface NewRunViewController : UIViewController
+@interface NewRunViewController : UIViewController <ADBannerViewDelegate>
+
+@property (weak, nonatomic) IBOutlet ADBannerView *adBanner;
 
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
