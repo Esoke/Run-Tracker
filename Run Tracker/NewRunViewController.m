@@ -45,13 +45,7 @@ static NSString * const detailSegueName = @"RunDetails";
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.mapView.delegate = self;
-    [self startLocationUpdates];
-
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
+    self.adBanner.delegate = self;
     
     self.startButton.hidden = NO;
     self.promptLabel.hidden = NO;
@@ -61,14 +55,20 @@ static NSString * const detailSegueName = @"RunDetails";
     self.distLabel.hidden = YES;
     self.paceLabel.hidden = YES;
     self.stopButton.hidden = YES;
-    
     self.mapView.hidden = YES;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self startLocationUpdates];
+
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    [self.timer invalidate];
+
 }
 
 
@@ -76,6 +76,7 @@ static NSString * const detailSegueName = @"RunDetails";
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 - (void)eachSecond
 {
@@ -104,6 +105,8 @@ static NSString * const detailSegueName = @"RunDetails";
 }
 
 -(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error{
+    
+    if(error){
     UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Unable to reach location."
                                                                    message:nil
                                                             preferredStyle:UIAlertControllerStyleAlert];
@@ -112,6 +115,7 @@ static NSString * const detailSegueName = @"RunDetails";
     
     [alert addAction:defaultAction];
     [self presentViewController:alert animated:YES completion:nil];
+    }
     
 }
 
@@ -208,6 +212,9 @@ static NSString * const detailSegueName = @"RunDetails";
                                                     otherButtonTitles:@"Save", @"Discard", nil];
     actionSheet.actionSheetStyle = UIActionSheetStyleDefault;
     [actionSheet showInView:self.view];
+    
+    [self.timer invalidate];
+    [self.locationManager stopUpdatingLocation];
 }
 
 
@@ -234,7 +241,14 @@ static NSString * const detailSegueName = @"RunDetails";
         // discard
     } else if (buttonIndex == 1) {
         [self.navigationController popToRootViewControllerAnimated:YES];
+   
+        // cancel
+    }else if (buttonIndex == 2) {
+        self.timer = [NSTimer scheduledTimerWithTimeInterval:(1.0) target:self
+                                                    selector:@selector(eachSecond) userInfo:nil repeats:YES];
+        [self.locationManager startUpdatingLocation];
     }
+    
 }
 
 
@@ -242,5 +256,39 @@ static NSString * const detailSegueName = @"RunDetails";
 {
     [[segue destinationViewController] setRun:self.run];
 }
+
+
+#pragma mark -ADBannerViewDelegate methods
+
+-(void)bannerViewWillLoadAd:(ADBannerView *)banner{
+    NSLog(@"Ad Banner will load ad.");
+}
+
+-(void)bannerViewDidLoadAd:(ADBannerView *)banner{
+    NSLog(@"Ad Banner did load ad.");
+    // Show the ad banner.
+    [UIView animateWithDuration:0.5 animations:^{
+        self.adBanner.alpha = 1.0;
+    }];
+}
+
+-(BOOL)bannerViewActionShouldBegin:(ADBannerView *)banner willLeaveApplication:(BOOL)willLeave{
+    NSLog(@"Ad Banner action is about to begin.");
+    return YES;
+}
+
+-(void)bannerViewActionDidFinish:(ADBannerView *)banner{
+    NSLog(@"Ad Banner action did finish");
+}
+
+-(void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error{
+    NSLog(@"Unable to show ads. Error: %@", [error localizedDescription]);
+    
+    // Hide the ad banner.
+    [UIView animateWithDuration:0.5 animations:^{
+        self.adBanner.alpha = 0.0;
+    }];
+}
+
 
 @end
