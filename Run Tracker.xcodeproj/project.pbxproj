@@ -112,6 +112,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FE10E8BE1DE0E71F008DB782 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FE3293ED1C1E32A200E7F5EB /* Main.storyboard */,
+				FE3293F21C1E32A200E7F5EB /* LaunchScreen.storyboard */,
+				FE1DF44D1C1E6AF7001BF8EC /* MulticolorPolylineSegment.h */,
+				FE1DF44E1C1E6AF7001BF8EC /* MulticolorPolylineSegment.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		FE10E8BF1DE0E739008DB782 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FE1DF44B1C1E58CA001BF8EC /* MathController.m */,
+				FE1DF44A1C1E58CA001BF8EC /* MathController.h */,
+				FE1DF41D1C1E38BA001BF8EC /* Run_Tracker.xcdatamodeld */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		FE10E8C01DE0E745008DB782 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FE1DF4441C1E53CE001BF8EC /* HomeViewController.h */,
+				FE1DF4451C1E53CE001BF8EC /* HomeViewController.m */,
+				FE1DF4471C1E545C001BF8EC /* NewRunViewController.h */,
+				FE1DF4481C1E545C001BF8EC /* NewRunViewController.m */,
+				FE1DF4381C1E49C6001BF8EC /* DetailViewController.h */,
+				FE1DF4391C1E49C6001BF8EC /* DetailViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		FE1DF42C1C1E39B2001BF8EC /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
@@ -173,20 +207,10 @@
 			children = (
 				FE3293E11C1E32A200E7F5EB /* AppDelegate.h */,
 				FE3293E21C1E32A200E7F5EB /* AppDelegate.m */,
-				FE1DF4441C1E53CE001BF8EC /* HomeViewController.h */,
-				FE1DF4451C1E53CE001BF8EC /* HomeViewController.m */,
-				FE1DF4471C1E545C001BF8EC /* NewRunViewController.h */,
-				FE1DF4481C1E545C001BF8EC /* NewRunViewController.m */,
-				FE1DF4381C1E49C6001BF8EC /* DetailViewController.h */,
-				FE1DF4391C1E49C6001BF8EC /* DetailViewController.m */,
-				FE3293ED1C1E32A200E7F5EB /* Main.storyboard */,
-				FE3293F21C1E32A200E7F5EB /* LaunchScreen.storyboard */,
-				FE1DF44A1C1E58CA001BF8EC /* MathController.h */,
-				FE1DF44B1C1E58CA001BF8EC /* MathController.m */,
-				FE1DF44D1C1E6AF7001BF8EC /* MulticolorPolylineSegment.h */,
-				FE1DF44E1C1E6AF7001BF8EC /* MulticolorPolylineSegment.m */,
+				FE10E8C01DE0E745008DB782 /* Controller */,
+				FE10E8BE1DE0E71F008DB782 /* View */,
+				FE10E8BF1DE0E739008DB782 /* Model */,
 				FE3293F51C1E32A200E7F5EB /* Info.plist */,
-				FE1DF41D1C1E38BA001BF8EC /* Run_Tracker.xcdatamodeld */,
 				FE3293F01C1E32A200E7F5EB /* Assets.xcassets */,
 				FE3293DE1C1E32A200E7F5EB /* Supporting Files */,
 				FE1DF42C1C1E39B2001BF8EC /* CoreData */,
