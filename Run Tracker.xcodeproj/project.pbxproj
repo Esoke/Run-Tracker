@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FE10E8C21DE0E81A008DB782 /* Credits in Resources */ = {isa = PBXBuildFile; fileRef = FE10E8C11DE0E81A008DB782 /* Credits */; };
 		FE1DF41F1C1E38BA001BF8EC /* Run_Tracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FE1DF41D1C1E38BA001BF8EC /* Run_Tracker.xcdatamodeld */; };
 		FE1DF4281C1E39A1001BF8EC /* Location+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = FE1DF4211C1E39A1001BF8EC /* Location+CoreDataProperties.m */; };
 		FE1DF4291C1E39A1001BF8EC /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = FE1DF4231C1E39A1001BF8EC /* Location.m */; };
@@ -17,7 +18,6 @@
 		FE1DF4351C1E3B0F001BF8EC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE1DF4311C1E3B0F001BF8EC /* Foundation.framework */; };
 		FE1DF4361C1E3B0F001BF8EC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE1DF4321C1E3B0F001BF8EC /* UIKit.framework */; };
 		FE1DF43C1C1E49C6001BF8EC /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE1DF4391C1E49C6001BF8EC /* DetailViewController.m */; };
-		FE1DF4461C1E53CE001BF8EC /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE1DF4451C1E53CE001BF8EC /* HomeViewController.m */; };
 		FE1DF4491C1E545C001BF8EC /* NewRunViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE1DF4481C1E545C001BF8EC /* NewRunViewController.m */; };
 		FE1DF44C1C1E58CA001BF8EC /* MathController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE1DF44B1C1E58CA001BF8EC /* MathController.m */; };
 		FE1DF44F1C1E6AF7001BF8EC /* MulticolorPolylineSegment.m in Sources */ = {isa = PBXBuildFile; fileRef = FE1DF44E1C1E6AF7001BF8EC /* MulticolorPolylineSegment.m */; };
@@ -40,6 +40,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FE10E8C11DE0E81A008DB782 /* Credits */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Credits; sourceTree = "<group>"; };
 		FE1DF41E1C1E38BA001BF8EC /* Run_Tracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Run_Tracker.xcdatamodel; sourceTree = "<group>"; };
 		FE1DF4201C1E39A1001BF8EC /* Location+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Location+CoreDataProperties.h"; sourceTree = "<group>"; };
 		FE1DF4211C1E39A1001BF8EC /* Location+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Location+CoreDataProperties.m"; sourceTree = "<group>"; };
@@ -55,8 +56,6 @@
 		FE1DF4321C1E3B0F001BF8EC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FE1DF4381C1E49C6001BF8EC /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		FE1DF4391C1E49C6001BF8EC /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
-		FE1DF4441C1E53CE001BF8EC /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
-		FE1DF4451C1E53CE001BF8EC /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		FE1DF4471C1E545C001BF8EC /* NewRunViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewRunViewController.h; sourceTree = "<group>"; };
 		FE1DF4481C1E545C001BF8EC /* NewRunViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewRunViewController.m; sourceTree = "<group>"; };
 		FE1DF44A1C1E58CA001BF8EC /* MathController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathController.h; sourceTree = "<group>"; };
@@ -136,8 +135,6 @@
 		FE10E8C01DE0E745008DB782 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				FE1DF4441C1E53CE001BF8EC /* HomeViewController.h */,
-				FE1DF4451C1E53CE001BF8EC /* HomeViewController.m */,
 				FE1DF4471C1E545C001BF8EC /* NewRunViewController.h */,
 				FE1DF4481C1E545C001BF8EC /* NewRunViewController.m */,
 				FE1DF4381C1E49C6001BF8EC /* DetailViewController.h */,
@@ -188,6 +185,7 @@
 		FE3293D21C1E32A200E7F5EB = {
 			isa = PBXGroup;
 			children = (
+				FE10E8C11DE0E81A008DB782 /* Credits */,
 				FE3293DD1C1E32A200E7F5EB /* Run Tracker */,
 				FE3293DC1C1E32A200E7F5EB /* Products */,
 				FE1DF4371C1E3B6E001BF8EC /* Library */,
@@ -296,6 +294,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE3293F41C1E32A200E7F5EB /* LaunchScreen.storyboard in Resources */,
+				FE10E8C21DE0E81A008DB782 /* Credits in Resources */,
 				FE3293F11C1E32A200E7F5EB /* Assets.xcassets in Resources */,
 				FE3293EF1C1E32A200E7F5EB /* Main.storyboard in Resources */,
 			);
@@ -314,7 +313,6 @@
 				FE1DF44F1C1E6AF7001BF8EC /* MulticolorPolylineSegment.m in Sources */,
 				FE1DF43C1C1E49C6001BF8EC /* DetailViewController.m in Sources */,
 				FE1DF42A1C1E39A1001BF8EC /* Run+CoreDataProperties.m in Sources */,
-				FE1DF4461C1E53CE001BF8EC /* HomeViewController.m in Sources */,
 				FE1DF41F1C1E38BA001BF8EC /* Run_Tracker.xcdatamodeld in Sources */,
 				FE1DF4491C1E545C001BF8EC /* NewRunViewController.m in Sources */,
 				FE1DF44C1C1E58CA001BF8EC /* MathController.m in Sources */,
