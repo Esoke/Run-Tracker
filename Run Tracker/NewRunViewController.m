@@ -26,7 +26,6 @@ static NSString * const detailSegueName = @"RunDetails";
 
 @property (nonatomic, strong) Run *run;
 
-@property (nonatomic, weak) IBOutlet UILabel *promptLabel;
 @property (nonatomic, weak) IBOutlet UILabel *timeLabel;
 @property (nonatomic, weak) IBOutlet UILabel *distLabel;
 @property (nonatomic, weak) IBOutlet UILabel *paceLabel;
@@ -48,7 +47,6 @@ static NSString * const detailSegueName = @"RunDetails";
     self.adBanner.delegate = self;
     
     self.startButton.hidden = NO;
-    self.promptLabel.hidden = NO;
     
     self.timeLabel.text = @"";
     self.timeLabel.hidden = YES;
@@ -81,9 +79,9 @@ static NSString * const detailSegueName = @"RunDetails";
 - (void)eachSecond
 {
     self.seconds++;
-    self.timeLabel.text = [NSString stringWithFormat:@"Time: %@",  [MathController stringifySecondCount:self.seconds usingLongFormat:NO]];
-    self.distLabel.text = [NSString stringWithFormat:@"Distance: %@", [MathController stringifyDistance:self.distance]];
-    self.paceLabel.text = [NSString stringWithFormat:@"Pace: %@",  [MathController stringifyAvgPaceFromDist:self.distance overTime:self.seconds]];
+    self.timeLabel.text = [NSString stringWithFormat:@"%@",  [MathController stringifySecondCount:self.seconds usingLongFormat:NO]];
+    self.distLabel.text = [NSString stringWithFormat:@"%@", [MathController stringifyDistance:self.distance]];
+    self.paceLabel.text = [NSString stringWithFormat:@"%@",  [MathController stringifyAvgPaceFromDist:self.distance overTime:self.seconds]];
 }
 
 - (void)startLocationUpdates
@@ -185,7 +183,6 @@ static NSString * const detailSegueName = @"RunDetails";
 {
     // hide the start UI
     self.startButton.hidden = YES;
-    self.promptLabel.hidden = YES;
     
     // show the running UI
     self.mapView.hidden = NO;
