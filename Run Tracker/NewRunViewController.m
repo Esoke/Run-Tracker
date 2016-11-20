@@ -18,6 +18,8 @@ static NSString * const detailSegueName = @"RunDetails";
 
 @interface NewRunViewController () <UIActionSheetDelegate, CLLocationManagerDelegate, MKMapViewDelegate>
 
+@property (weak, nonatomic) IBOutlet UILabel *caloriesLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *runnerImg;
 @property int seconds;
 @property float distance;
 @property (nonatomic, strong) CLLocationManager *locationManager;
@@ -54,6 +56,15 @@ static NSString * const detailSegueName = @"RunDetails";
     self.paceLabel.hidden = YES;
     self.stopButton.hidden = YES;
     self.mapView.hidden = YES;
+    self.caloriesLabel.hidden = YES;
+    
+    self.startButton.layer.cornerRadius = self.startButton.frame.size.width /2;
+    self.startButton.clipsToBounds = YES;
+    
+    self.stopButton.layer.cornerRadius = self.stopButton.frame.size.width /2;
+    self.stopButton.clipsToBounds =YES;
+    
+    self.navigationController.navigationBar.hidden = YES;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -183,6 +194,7 @@ static NSString * const detailSegueName = @"RunDetails";
 {
     // hide the start UI
     self.startButton.hidden = YES;
+    self.runnerImg.hidden = YES;
     
     // show the running UI
     self.mapView.hidden = NO;
