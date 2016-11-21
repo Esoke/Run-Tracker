@@ -33,7 +33,7 @@ static NSString * const detailSegueName = @"RunDetails";
 @property (nonatomic, weak) IBOutlet UILabel *paceLabel;
 @property (nonatomic, weak) IBOutlet UIButton *startButton;
 @property (nonatomic, weak) IBOutlet UIButton *stopButton;
-@property (nonatomic, weak) IBOutlet MKMapView *mapView;
+@property (nonatomic, retain) IBOutlet MKMapView *mapView;
 
 @end
 
@@ -56,7 +56,7 @@ static NSString * const detailSegueName = @"RunDetails";
     self.paceLabel.hidden = YES;
     self.stopButton.hidden = YES;
     self.mapView.hidden = YES;
-    self.caloriesLabel.hidden = YES;
+    //self.caloriesLabel.hidden = YES;
     
     self.startButton.layer.cornerRadius = self.startButton.frame.size.width /2;
     self.startButton.clipsToBounds = YES;
@@ -65,6 +65,11 @@ static NSString * const detailSegueName = @"RunDetails";
     self.stopButton.clipsToBounds =YES;
     
     self.navigationController.navigationBar.hidden = YES;
+    
+    self.timeLabel.layer.cornerRadius = self.timeLabel.frame.size.height /3;
+    self.paceLabel.layer.cornerRadius = self.paceLabel.frame.size.height/3;
+    self.caloriesLabel.layer.cornerRadius = self.caloriesLabel.frame.size.height /3;
+    self.distLabel.layer.cornerRadius = self.distLabel.frame.size.height /3;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -128,6 +133,13 @@ static NSString * const detailSegueName = @"RunDetails";
     
 }
 
+-(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation{
+    MKCoordinateRegion region =
+    MKCoordinateRegionMakeWithDistance(userLocation.coordinate, 500, 500);
+    [self.mapView setRegion:region animated:YES];
+    
+}
+
 - (void)locationManager:(CLLocationManager *)manager
      didUpdateLocations:(NSArray *)locations
 {
@@ -147,9 +159,9 @@ static NSString * const detailSegueName = @"RunDetails";
                 coords[0] = ((CLLocation *)self.locations.lastObject).coordinate;
                 coords[1] = newLocation.coordinate;
                 
-                MKCoordinateRegion region =
-                MKCoordinateRegionMakeWithDistance(newLocation.coordinate, 500, 500);
-                [self.mapView setRegion:region animated:YES];
+//                MKCoordinateRegion region =
+//                MKCoordinateRegionMakeWithDistance(newLocation.coordinate, 500, 500);
+//                [self.mapView setRegion:region animated:YES];
                 
                 [self.mapView addOverlay:[MKPolyline polylineWithCoordinates:coords count:2]];
             }
@@ -208,6 +220,8 @@ static NSString * const detailSegueName = @"RunDetails";
     self.locations = [NSMutableArray array];
     self.timer = [NSTimer scheduledTimerWithTimeInterval:(1.0) target:self
                                                 selector:@selector(eachSecond) userInfo:nil repeats:YES];
+    
+    self.mapView.showsUserLocation = YES;
     [self startLocationUpdates];
     [self.mapView removeOverlays:self.mapView.overlays];
     [self.mapView setRegion: MKCoordinateRegionMakeWithDistance(self.mapView.userLocation.coordinate, 500, 500)];
@@ -232,8 +246,8 @@ static NSString * const detailSegueName = @"RunDetails";
     if ([overlay isKindOfClass:[MKPolyline class]]) {
         MKPolyline *polyLine = (MKPolyline *)overlay;
         MKPolylineRenderer *aRenderer = [[MKPolylineRenderer alloc] initWithPolyline:polyLine];
-        aRenderer.strokeColor = [UIColor blueColor];
-        aRenderer.lineWidth = 3;
+        aRenderer.strokeColor = [UIColor colorWithRed:46.0f/255.0f green:201.0f/255.0f blue:176.0f/255.0f alpha:1.0f];
+        aRenderer.lineWidth = 5;
         return aRenderer;
     }
     return nil;
