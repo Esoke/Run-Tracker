@@ -46,7 +46,6 @@ static NSString * const detailSegueName = @"RunDetails";
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.mapView.delegate = self;
-    self.adBanner.delegate = self;
     
     self.startButton.hidden = NO;
     
@@ -275,43 +274,13 @@ static NSString * const detailSegueName = @"RunDetails";
 }
 
 
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     [[segue destinationViewController] setRun:self.run];
 }
 
 
-#pragma mark -ADBannerViewDelegate methods
-
--(void)bannerViewWillLoadAd:(ADBannerView *)banner{
-    NSLog(@"Ad Banner will load ad.");
-}
-
--(void)bannerViewDidLoadAd:(ADBannerView *)banner{
-    NSLog(@"Ad Banner did load ad.");
-    // Show the ad banner.
-    [UIView animateWithDuration:0.5 animations:^{
-        self.adBanner.alpha = 1.0;
-    }];
-}
-
--(BOOL)bannerViewActionShouldBegin:(ADBannerView *)banner willLeaveApplication:(BOOL)willLeave{
-    NSLog(@"Ad Banner action is about to begin.");
-    return YES;
-}
-
--(void)bannerViewActionDidFinish:(ADBannerView *)banner{
-    NSLog(@"Ad Banner action did finish");
-}
-
--(void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error{
-    NSLog(@"Unable to show ads. Error: %@", [error localizedDescription]);
-    
-    // Hide the ad banner.
-    [UIView animateWithDuration:0.5 animations:^{
-        self.adBanner.alpha = 0.0;
-    }];
-}
 
 
 @end

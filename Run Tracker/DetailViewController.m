@@ -139,13 +139,13 @@
         // no locations were found!
         self.mapView.hidden = YES;
         
-        UIAlertView *alertView = [[UIAlertView alloc]
-                                  initWithTitle:@"Error"
-                                  message:@"Sorry, this run has no locations saved."
-                                  delegate:nil
-                                  cancelButtonTitle:@"OK"
-                                  otherButtonTitles:nil];
-        [alertView show];
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error" message:@"Sorry, this run has no locations saved." preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                              handler:^(UIAlertAction * action) {}];
+        
+        [alert addAction:defaultAction];
+        [self presentViewController:alert animated:YES completion:nil];
     }
 }
 - (IBAction)donePressed:(id)sender {

@@ -11,8 +11,6 @@
 
 @interface NewRunViewController : UIViewController <ADBannerViewDelegate>
 
-@property (weak, nonatomic) IBOutlet ADBannerView *adBanner;
-
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
 @end
