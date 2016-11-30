@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <iAd/iAd.h>
+#import <HealthKit/HealthKit.h>
 
-@interface NewRunViewController : UIViewController <ADBannerViewDelegate>
+@interface NewRunViewController : UIViewController
 
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
