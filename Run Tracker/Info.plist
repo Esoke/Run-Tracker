@@ -23,7 +23,7 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>To calculate distance and pace accurately location updates must work in the background.</string>
+	<string>Run Tracker wants to track your run.</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>location</string>

@@ -26,6 +26,7 @@
 		FE3293EF1C1E32A200E7F5EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE3293ED1C1E32A200E7F5EB /* Main.storyboard */; };
 		FE3293F11C1E32A200E7F5EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE3293F01C1E32A200E7F5EB /* Assets.xcassets */; };
 		FE3293F41C1E32A200E7F5EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE3293F21C1E32A200E7F5EB /* LaunchScreen.storyboard */; };
+		FE870B731DED2328004FF7E4 /* nasalization.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FE870B721DED2328004FF7E4 /* nasalization.ttf */; };
 		FEDD41F41C5A8BC800E55B58 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEDD41F31C5A8BC800E55B58 /* AudioToolbox.framework */; };
 		FEDD41F61C5A8BE600E55B58 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEDD41F51C5A8BE600E55B58 /* CFNetwork.framework */; };
 		FEDD41F81C5A8BF800E55B58 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEDD41F71C5A8BF800E55B58 /* QuartzCore.framework */; };
@@ -37,7 +38,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		FE10E8C11DE0E81A008DB782 /* Credits */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Credits; sourceTree = "<group>"; };
+		FE10E8C11DE0E81A008DB782 /* Credits */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Credits; path = ../Credits; sourceTree = "<group>"; };
 		FE1DF41E1C1E38BA001BF8EC /* Run_Tracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Run_Tracker.xcdatamodel; sourceTree = "<group>"; };
 		FE1DF4201C1E39A1001BF8EC /* Location+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Location+CoreDataProperties.h"; sourceTree = "<group>"; };
 		FE1DF4211C1E39A1001BF8EC /* Location+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Location+CoreDataProperties.m"; sourceTree = "<group>"; };
@@ -67,6 +68,7 @@
 		FE3293F01C1E32A200E7F5EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FE3293F31C1E32A200E7F5EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FE3293F51C1E32A200E7F5EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FE870B721DED2328004FF7E4 /* nasalization.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = nasalization.ttf; path = ../nasalization/nasalization.ttf; sourceTree = "<group>"; };
 		FEDD41F31C5A8BC800E55B58 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		FEDD41F51C5A8BE600E55B58 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		FEDD41F71C5A8BF800E55B58 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -173,7 +175,6 @@
 		FE3293D21C1E32A200E7F5EB = {
 			isa = PBXGroup;
 			children = (
-				FE10E8C11DE0E81A008DB782 /* Credits */,
 				FE3293DD1C1E32A200E7F5EB /* Run Tracker */,
 				FE3293DC1C1E32A200E7F5EB /* Products */,
 				FE1DF4371C1E3B6E001BF8EC /* Library */,
@@ -191,13 +192,9 @@
 		FE3293DD1C1E32A200E7F5EB /* Run Tracker */ = {
 			isa = PBXGroup;
 			children = (
-				FE3293E11C1E32A200E7F5EB /* AppDelegate.h */,
-				FE3293E21C1E32A200E7F5EB /* AppDelegate.m */,
-				FE10E8C01DE0E745008DB782 /* Controller */,
-				FE10E8BE1DE0E71F008DB782 /* View */,
 				FE10E8BF1DE0E739008DB782 /* Model */,
-				FE3293F51C1E32A200E7F5EB /* Info.plist */,
-				FE3293F01C1E32A200E7F5EB /* Assets.xcassets */,
+				FE10E8BE1DE0E71F008DB782 /* View */,
+				FE10E8C01DE0E745008DB782 /* Controller */,
 				FE3293DE1C1E32A200E7F5EB /* Supporting Files */,
 				FE1DF42C1C1E39B2001BF8EC /* CoreData */,
 			);
@@ -207,6 +204,12 @@
 		FE3293DE1C1E32A200E7F5EB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FE10E8C11DE0E81A008DB782 /* Credits */,
+				FE870B721DED2328004FF7E4 /* nasalization.ttf */,
+				FE3293E11C1E32A200E7F5EB /* AppDelegate.h */,
+				FE3293E21C1E32A200E7F5EB /* AppDelegate.m */,
+				FE3293F51C1E32A200E7F5EB /* Info.plist */,
+				FE3293F01C1E32A200E7F5EB /* Assets.xcassets */,
 				FE3293DF1C1E32A200E7F5EB /* main.m */,
 			);
 			name = "Supporting Files";
@@ -238,7 +241,7 @@
 		FE3293D31C1E32A200E7F5EB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = Esma;
 				TargetAttributes = {
 					FE3293DA1C1E32A200E7F5EB = {
@@ -281,6 +284,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE870B731DED2328004FF7E4 /* nasalization.ttf in Resources */,
 				FE3293F41C1E32A200E7F5EB /* LaunchScreen.storyboard in Resources */,
 				FE10E8C21DE0E81A008DB782 /* Credits in Resources */,
 				FE3293F11C1E32A200E7F5EB /* Assets.xcassets in Resources */,
@@ -344,8 +348,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -387,8 +393,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";

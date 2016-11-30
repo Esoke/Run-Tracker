@@ -34,6 +34,8 @@ static NSString * const detailSegueName = @"RunDetails";
 @property (nonatomic, weak) IBOutlet UIButton *startButton;
 @property (nonatomic, weak) IBOutlet UIButton *stopButton;
 @property (nonatomic, retain) IBOutlet MKMapView *mapView;
+@property (weak, nonatomic) IBOutlet UILabel *paceUnitLabel;
+@property (weak, nonatomic) IBOutlet UILabel *distanceUnitLabel;
 
 @end
 
@@ -52,7 +54,9 @@ static NSString * const detailSegueName = @"RunDetails";
     self.timeLabel.text = @"";
     self.timeLabel.hidden = YES;
     self.distLabel.hidden = YES;
+    self.distanceUnitLabel.hidden = YES;
     self.paceLabel.hidden = YES;
+    self.paceUnitLabel.hidden = YES;
     self.stopButton.hidden = YES;
     self.mapView.hidden = YES;
     //self.caloriesLabel.hidden = YES;
@@ -158,10 +162,6 @@ static NSString * const detailSegueName = @"RunDetails";
                 coords[0] = ((CLLocation *)self.locations.lastObject).coordinate;
                 coords[1] = newLocation.coordinate;
                 
-//                MKCoordinateRegion region =
-//                MKCoordinateRegionMakeWithDistance(newLocation.coordinate, 500, 500);
-//                [self.mapView setRegion:region animated:YES];
-                
                 [self.mapView addOverlay:[MKPolyline polylineWithCoordinates:coords count:2]];
             }
             
@@ -169,6 +169,19 @@ static NSString * const detailSegueName = @"RunDetails";
         }
     }
 }
+
+- (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id < MKOverlay >)overlay
+{
+    if ([overlay isKindOfClass:[MKPolyline class]]) {
+        MKPolyline *polyLine = (MKPolyline *)overlay;
+        MKPolylineRenderer *aRenderer = [[MKPolylineRenderer alloc] initWithPolyline:polyLine];
+        aRenderer.strokeColor = [UIColor colorWithRed:46.0f/255.0f green:201.0f/255.0f blue:176.0f/255.0f alpha:1.0f];
+        aRenderer.lineWidth = 5;
+        return aRenderer;
+    }
+    return nil;
+}
+
 
 - (void)saveRun
 {
@@ -211,7 +224,9 @@ static NSString * const detailSegueName = @"RunDetails";
     self.mapView.hidden = NO;
     self.timeLabel.hidden = NO;
     self.distLabel.hidden = NO;
+    self.distanceUnitLabel.hidden = NO;
     self.paceLabel.hidden = NO;
+    self.paceUnitLabel.hidden = NO;
     self.stopButton.hidden = NO;
     
     self.seconds = 0;
@@ -237,19 +252,6 @@ static NSString * const detailSegueName = @"RunDetails";
     
     [self.timer invalidate];
     [self.locationManager stopUpdatingLocation];
-}
-
-
-- (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id < MKOverlay >)overlay
-{
-    if ([overlay isKindOfClass:[MKPolyline class]]) {
-        MKPolyline *polyLine = (MKPolyline *)overlay;
-        MKPolylineRenderer *aRenderer = [[MKPolylineRenderer alloc] initWithPolyline:polyLine];
-        aRenderer.strokeColor = [UIColor colorWithRed:46.0f/255.0f green:201.0f/255.0f blue:176.0f/255.0f alpha:1.0f];
-        aRenderer.lineWidth = 5;
-        return aRenderer;
-    }
-    return nil;
 }
 
 
