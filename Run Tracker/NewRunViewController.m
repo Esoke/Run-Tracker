@@ -28,6 +28,7 @@ static NSString * const detailSegueName = @"RunDetails";
 
 @property (nonatomic, strong) CLLocationManager *locationManager;
 @property (nonatomic, strong) NSMutableArray *locations;
+
 @property (nonatomic, strong) NSTimer *timer;
 
 @property (nonatomic, strong) Run *run;
@@ -40,6 +41,7 @@ static NSString * const detailSegueName = @"RunDetails";
 @property (nonatomic, retain) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) IBOutlet UILabel *paceUnitLabel;
 @property (weak, nonatomic) IBOutlet UILabel *distanceUnitLabel;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
 
 
 @end
@@ -223,6 +225,7 @@ static NSString * const detailSegueName = @"RunDetails";
     // hide the start UI
     self.startButton.hidden = YES;
     self.runnerImg.hidden = YES;
+    self.segmentedControl.hidden = YES;
     
     // show the running UI
     self.mapView.hidden = NO;

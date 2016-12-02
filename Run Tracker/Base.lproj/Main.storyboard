@@ -93,8 +93,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="yLb-bC-fMe">
-                                <rect key="frame" x="132" y="519" width="150" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="frame" x="132" y="486" width="150" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="km"/>
                                     <segment title="mi"/>
@@ -115,6 +115,7 @@
                         <outlet property="paceLabel" destination="tAf-qw-N5z" id="3ei-A6-Tbd"/>
                         <outlet property="paceUnitLabel" destination="3D9-p1-UZE" id="DOE-QR-6nJ"/>
                         <outlet property="runnerImg" destination="q3K-zg-nSs" id="Jcb-4Y-M5H"/>
+                        <outlet property="segmentedControl" destination="yLb-bC-fMe" id="mQQ-vQ-6Ok"/>
                         <outlet property="startButton" destination="EGf-d8-vCQ" id="SmS-BV-6vQ"/>
                         <outlet property="stopButton" destination="47C-ip-aDb" id="j1V-Tq-bCz"/>
                         <outlet property="timeLabel" destination="QDc-hF-HiX" id="A06-vW-QGr"/>
