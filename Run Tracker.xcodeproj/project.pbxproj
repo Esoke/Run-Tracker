@@ -120,7 +120,6 @@
 			children = (
 				FE1DF44B1C1E58CA001BF8EC /* MathController.m */,
 				FE1DF44A1C1E58CA001BF8EC /* MathController.h */,
-				FE1DF41D1C1E38BA001BF8EC /* Run_Tracker.xcdatamodeld */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -139,6 +138,7 @@
 		FE1DF42C1C1E39B2001BF8EC /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				FE1DF41D1C1E38BA001BF8EC /* Run_Tracker.xcdatamodeld */,
 				FE1DF4201C1E39A1001BF8EC /* Location+CoreDataProperties.h */,
 				FE1DF4211C1E39A1001BF8EC /* Location+CoreDataProperties.m */,
 				FE1DF4221C1E39A1001BF8EC /* Location.h */,

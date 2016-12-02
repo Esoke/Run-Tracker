@@ -59,6 +59,15 @@ static NSString * const detailSegueName = @"RunDetails";
     
     [self makeButtonsRounded];
     [self bringAppInStartMode];
+    
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    if ([userDefaults boolForKey:@"isMetric"]){
+        self.segmentedControl.selectedSegmentIndex = 0;
+    }else{
+        self.segmentedControl.selectedSegmentIndex = 1;
+
+    }
+
 }
 
 -(void)makeButtonsRounded{
@@ -127,7 +136,7 @@ static NSString * const detailSegueName = @"RunDetails";
     self.locationManager.activityType = CLActivityTypeFitness;
     
     // Movement threshold for new events.
-    self.locationManager.distanceFilter = 10; // meters
+    self.locationManager.distanceFilter = 3; // meters
     
     [self.locationManager startUpdatingLocation];
 }
@@ -218,11 +227,11 @@ static NSString * const detailSegueName = @"RunDetails";
     self.run = newRun;
     
     // Save the context.
-    NSError *error = nil;
-    if (![self.managedObjectContext save:&error]) {
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-        abort();
-    }
+//    NSError *error = nil;
+//    if (![self.managedObjectContext save:&error]) {
+//        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+//        abort();
+//    }
 }
 
 -(IBAction)startPressed:(id)sender
