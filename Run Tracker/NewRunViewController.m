@@ -92,6 +92,13 @@ static NSString * const detailSegueName = @"RunDetails";
     self.paceUnitLabel.hidden = YES;
     self.stopButton.hidden = YES;
     self.mapView.hidden = YES;
+    [self cleanLabels];
+}
+
+-(void)cleanLabels{
+    self.timeLabel.text = @"";
+    self.paceLabel.text = @"";
+    self.distLabel.text = @"";
 }
 
 - (void)viewWillAppear:(BOOL)animated
