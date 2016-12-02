@@ -73,7 +73,8 @@ static NSString * const detailSegueName = @"RunDetails";
 
 -(void)bringAppInStartMode{
     self.startButton.hidden = NO;
-        self.runnerImg.hidden = NO;
+    self.runnerImg.hidden = NO;
+    self.segmentedControl.hidden = NO;
     self.timeLabel.text = @"";
     self.timeLabel.hidden = YES;
     self.distLabel.hidden = YES;
@@ -87,6 +88,7 @@ static NSString * const detailSegueName = @"RunDetails";
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    [self bringAppInStartMode];
     [self startLocationUpdates];
 
 }
