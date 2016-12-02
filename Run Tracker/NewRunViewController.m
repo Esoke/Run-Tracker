@@ -55,9 +55,25 @@ static NSString * const detailSegueName = @"RunDetails";
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.mapView.delegate = self;
+    self.navigationController.navigationBar.hidden = YES;
     
+    [self makeButtonsRounded];
+    [self bringAppInStartMode];
+}
+
+-(void)makeButtonsRounded{
+    self.startButton.layer.cornerRadius = self.startButton.frame.size.width /2;
+    self.startButton.clipsToBounds = YES;
+    self.stopButton.layer.cornerRadius = self.stopButton.frame.size.width /2;
+    self.stopButton.clipsToBounds =YES;
+    self.timeLabel.layer.cornerRadius = self.timeLabel.frame.size.height /3;
+    self.paceLabel.layer.cornerRadius = self.paceLabel.frame.size.height/3;
+    self.distLabel.layer.cornerRadius = self.distLabel.frame.size.height /3;
+}
+
+-(void)bringAppInStartMode{
     self.startButton.hidden = NO;
-    
+        self.runnerImg.hidden = NO;
     self.timeLabel.text = @"";
     self.timeLabel.hidden = YES;
     self.distLabel.hidden = YES;
@@ -66,19 +82,6 @@ static NSString * const detailSegueName = @"RunDetails";
     self.paceUnitLabel.hidden = YES;
     self.stopButton.hidden = YES;
     self.mapView.hidden = YES;
-    //self.caloriesLabel.hidden = YES;
-    
-    self.startButton.layer.cornerRadius = self.startButton.frame.size.width /2;
-    self.startButton.clipsToBounds = YES;
-    
-    self.stopButton.layer.cornerRadius = self.stopButton.frame.size.width /2;
-    self.stopButton.clipsToBounds =YES;
-    
-    self.navigationController.navigationBar.hidden = YES;
-    
-    self.timeLabel.layer.cornerRadius = self.timeLabel.frame.size.height /3;
-    self.paceLabel.layer.cornerRadius = self.paceLabel.frame.size.height/3;
-    self.distLabel.layer.cornerRadius = self.distLabel.frame.size.height /3;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -270,6 +273,7 @@ static NSString * const detailSegueName = @"RunDetails";
         
         // discard
     } else if (buttonIndex == 1) {
+        [self bringAppInStartMode];
         [self.navigationController popToRootViewControllerAnimated:YES];
    
         // cancel
