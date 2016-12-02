@@ -10,9 +10,9 @@
 
 @interface MathController : NSObject
 
-+ (NSString *)stringifyDistance:(float)meters;
-+ (NSString *)stringifySecondCount:(int)seconds usingLongFormat:(BOOL)longFormat;
-+ (NSString *)stringifyAvgPaceFromDist:(float)meters overTime:(int)seconds;
++ (NSString *)stringifyDistance:(float)meters usingLongFormat:(BOOL)longFormat inMetricUnits:(BOOL)isMetric;
++ (NSString *)stringifySecondCount:(int)seconds usingLongFormat:(BOOL)longFormat inMetricUnits:(BOOL)isMetric;
++ (NSString *)stringifyAvgPaceFromDist:(float)meters overTime:(int)seconds usingLongFormat:(BOOL)longFormat inMetricUnits:(BOOL)isMetric;
 + (NSArray *)colorSegmentsForLocations:(NSArray *)locations;
 
 @end

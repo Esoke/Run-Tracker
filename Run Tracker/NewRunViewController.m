@@ -18,10 +18,14 @@ static NSString * const detailSegueName = @"RunDetails";
 
 @interface NewRunViewController () <UIActionSheetDelegate, CLLocationManagerDelegate, MKMapViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UILabel *caloriesLabel;
+
 @property (weak, nonatomic) IBOutlet UIImageView *runnerImg;
+
+
 @property int seconds;
 @property float distance;
+@property BOOL isMetric;
+
 @property (nonatomic, strong) CLLocationManager *locationManager;
 @property (nonatomic, strong) NSMutableArray *locations;
 @property (nonatomic, strong) NSTimer *timer;
@@ -36,6 +40,7 @@ static NSString * const detailSegueName = @"RunDetails";
 @property (nonatomic, retain) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) IBOutlet UILabel *paceUnitLabel;
 @property (weak, nonatomic) IBOutlet UILabel *distanceUnitLabel;
+
 
 @end
 
@@ -71,7 +76,6 @@ static NSString * const detailSegueName = @"RunDetails";
     
     self.timeLabel.layer.cornerRadius = self.timeLabel.frame.size.height /3;
     self.paceLabel.layer.cornerRadius = self.paceLabel.frame.size.height/3;
-    self.caloriesLabel.layer.cornerRadius = self.caloriesLabel.frame.size.height /3;
     self.distLabel.layer.cornerRadius = self.distLabel.frame.size.height /3;
 }
 
@@ -98,9 +102,9 @@ static NSString * const detailSegueName = @"RunDetails";
 - (void)eachSecond
 {
     self.seconds++;
-    self.timeLabel.text = [NSString stringWithFormat:@"%@",  [MathController stringifySecondCount:self.seconds usingLongFormat:NO]];
-    self.distLabel.text = [NSString stringWithFormat:@"%@", [MathController stringifyDistance:self.distance]];
-    self.paceLabel.text = [NSString stringWithFormat:@"%@",  [MathController stringifyAvgPaceFromDist:self.distance overTime:self.seconds]];
+    self.timeLabel.text = [NSString stringWithFormat:@"%@",  [MathController stringifySecondCount:self.seconds usingLongFormat:NO inMetricUnits:self.isMetric]];
+    self.distLabel.text = [NSString stringWithFormat:@"%@", [MathController stringifyDistance:self.distance usingLongFormat:NO inMetricUnits:self.isMetric]];
+    self.paceLabel.text = [NSString stringWithFormat:@"%@",  [MathController stringifyAvgPaceFromDist:self.distance overTime:self.seconds usingLongFormat:NO inMetricUnits:self.isMetric]];
 }
 
 - (void)startLocationUpdates
@@ -239,7 +243,6 @@ static NSString * const detailSegueName = @"RunDetails";
     [self startLocationUpdates];
     [self.mapView removeOverlays:self.mapView.overlays];
     [self.mapView setRegion: MKCoordinateRegionMakeWithDistance(self.mapView.userLocation.coordinate, 500, 500)];
-    
     }
 
 - (IBAction)stopPressed:(id)sender
@@ -282,6 +285,22 @@ static NSString * const detailSegueName = @"RunDetails";
     [[segue destinationViewController] setRun:self.run];
 }
 
+
+- (IBAction)unitSelectionChanged:(UISegmentedControl *)sender {
+    if (sender.selectedSegmentIndex == 0){ //km is chosen
+        self.isMetric = YES;
+        self.distanceUnitLabel.text = @"km";
+        self.paceUnitLabel.text = @"min/km";
+    }else{// miles is chosen
+        self.isMetric = NO;
+        self.distanceUnitLabel.text = @"mi";
+        self.paceUnitLabel.text = @"min/mi";
+    }
+    
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults setBool:self.isMetric forKey:@"isMetric"];
+    [userDefaults synchronize];
+}
 
 
 

@@ -21,6 +21,7 @@
 @property (nonatomic, weak) IBOutlet UILabel *timeLabel;
 @property (nonatomic, weak) IBOutlet UILabel *paceLabel;
 
+@property BOOL isMetric;
 @end
 
 @implementation DetailViewController
@@ -30,10 +31,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self configureView];
     self.mapView.delegate = self;
+    
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    self.isMetric = [userDefaults boolForKey:@"isMetric"];
+    [self configureView];
+
     [self.mapView setRegion:[self mapRegion]];
     [self loadMap];
+
 }
 
 - (void)setRun:(Run *)run
@@ -44,18 +50,19 @@
     }
 }
 
+
 - (void)configureView
 {
-    self.distanceLabel.text = [MathController stringifyDistance:self.run.distance.floatValue];
+    self.distanceLabel.text = [NSString stringWithFormat:@"Distance: %@", [MathController stringifyDistance:self.run.distance.floatValue  usingLongFormat:YES inMetricUnits:self.isMetric]];
     
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateStyle:NSDateFormatterMediumStyle];
     
     self.dateLabel.text = [formatter stringFromDate:self.run.timestamp];
     
-    self.timeLabel.text = [NSString stringWithFormat:@"Time: %@",  [MathController stringifySecondCount:self.run.duration.intValue usingLongFormat:YES]];
+    self.timeLabel.text = [NSString stringWithFormat:@"Time: %@",  [MathController stringifySecondCount:self.run.duration.intValue usingLongFormat:YES inMetricUnits:self.isMetric]];
     
-    self.paceLabel.text = [NSString stringWithFormat:@"Pace: %@",  [MathController stringifyAvgPaceFromDist:self.run.distance.floatValue overTime:self.run.duration.intValue]];
+    self.paceLabel.text = [NSString stringWithFormat:@"Pace: %@",  [MathController stringifyAvgPaceFromDist:self.run.distance.floatValue overTime:self.run.duration.intValue usingLongFormat:YES inMetricUnits:self.isMetric]];
     
     [self loadMap];
 }

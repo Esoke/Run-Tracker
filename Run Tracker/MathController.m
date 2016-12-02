@@ -10,13 +10,16 @@
 #import "Location.h"
 #import "MulticolorPolylineSegment.h"
 
-static bool const isMetric = YES;
+
 static float const metersInKM = 1000;
 static float const metersInMile = 1609.344;
 
+
 @implementation MathController
 
-+ (NSString *)stringifyDistance:(float)meters
+
+
++ (NSString *)stringifyDistance:(float)meters usingLongFormat:(BOOL)longFormat inMetricUnits:(BOOL)isMetric
 {
     float unitDivider;
     NSString *unitName;
@@ -32,11 +35,13 @@ static float const metersInMile = 1609.344;
         // to get from meters to miles divide by this
         unitDivider = metersInMile;
     }
-    
-    return [NSString stringWithFormat:@"%.2f %@", (meters / unitDivider), unitName];
+    if(longFormat){
+        return [NSString stringWithFormat:@"%.2f %@", (meters / unitDivider), unitName];
+    }
+    return [NSString stringWithFormat:@"%.2f", (meters / unitDivider)];
 }
 
-+ (NSString *)stringifySecondCount:(int)seconds usingLongFormat:(BOOL)longFormat
++ (NSString *)stringifySecondCount:(int)seconds usingLongFormat:(BOOL)longFormat inMetricUnits:(BOOL)isMetric
 {
     int remainingSeconds = seconds;
     int hours = remainingSeconds / 3600;
@@ -46,11 +51,11 @@ static float const metersInMile = 1609.344;
     
     if (longFormat) {
         if (hours > 0) {
-            return [NSString stringWithFormat:@"%ihr %imin %isec", hours, minutes, remainingSeconds];
+            return [NSString stringWithFormat:@"%i hr %i min %i sec", hours, minutes, remainingSeconds];
         } else if (minutes > 0) {
-            return [NSString stringWithFormat:@"%imin %isec", minutes, remainingSeconds];
+            return [NSString stringWithFormat:@"%i min %i sec", minutes, remainingSeconds];
         } else {
-            return [NSString stringWithFormat:@"%isec", remainingSeconds];
+            return [NSString stringWithFormat:@"%i sec", remainingSeconds];
         }
     } else {
         if (hours > 0) {
@@ -63,7 +68,7 @@ static float const metersInMile = 1609.344;
     }
 }
 
-+ (NSString *)stringifyAvgPaceFromDist:(float)meters overTime:(int)seconds
++ (NSString *)stringifyAvgPaceFromDist:(float)meters overTime:(int)seconds usingLongFormat:(BOOL)longFormat inMetricUnits:(BOOL)isMetric
 {
     if (seconds == 0 || meters == 0) {
         return @"0";
@@ -87,7 +92,10 @@ static float const metersInMile = 1609.344;
     int paceMin = (int) ((avgPaceSecMeters * unitMultiplier) / 60);
     int paceSec = (int) (avgPaceSecMeters * unitMultiplier - (paceMin*60));
     
-    return [NSString stringWithFormat:@"%i:%02i %@", paceMin, paceSec, unitName];
+    if(longFormat){
+        return [NSString stringWithFormat:@"%i:%02i %@", paceMin, paceSec, unitName];
+    }
+    return [NSString stringWithFormat:@"%i:%02i", paceMin, paceSec];
 }
 
 + (NSArray *)colorSegmentsForLocations:(NSArray *)locations
